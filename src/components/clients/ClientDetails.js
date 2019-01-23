@@ -16,15 +16,21 @@ class ClientDetails extends Component {
   // UPDATE BALANCE
   balanceSubmit = e => {
     e.preventDefault();
-    const { client, firestore } = this.props;
-    const { balanceUpdateAmount } = this.state;
+    const { client, firestore, history } = this.props;
+    const { balanceUpdateAmount, showBalanceUpdate } = this.state;
 
     const clientUpdate = {
       balance: parseFloat(balanceUpdateAmount),
     };
 
+    if (showBalanceUpdate) {
+      this.setState({ showBalanceUpdate: !showBalanceUpdate });
+    }
+
     // Update in firestore
-    firestore.update({ collection: 'clients', doc: client.id }, clientUpdate);
+    firestore
+      .update({ collection: 'clients', doc: client.id }, clientUpdate)
+      .then(history.push('/'));
   };
 
   // DELETE CLIENT

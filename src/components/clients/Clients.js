@@ -32,11 +32,11 @@ class Clients extends Component {
 
     if (clients) {
       return (
-        <div>
+        <div className>
           <div className="row">
             <div className="col-md-6">
               <h2>
-                <i className="fas fa-users" /> Clients
+                <i className="fas fa-address-book" /> Clients
               </h2>
             </div>
             <div className="col-md-6">

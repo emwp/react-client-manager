@@ -38,7 +38,7 @@ class Login extends Component {
               {message ? <Alert message={message} messageType={messageType} /> : null}
               <h1 className="text-center pb-4 pt-3">
                 <span className="text-primary">
-                  <i className="fas fa-lock" /> Login
+                  <i className="fas fa-sign-in-alt" /> Login
                 </span>
               </h1>
               <form onSubmit={this.onSubmit}>
